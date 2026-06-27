@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Владимир Федоренко — Siberian Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div id="CUR"></div>
+<div id="CDOT"></div>
+
+<!-- LOADER -->
+<div id="LOAD">
+  <div class="ld-logo">SIBERIAN WELLNESS</div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav on" id="nav">
+  <a class="nbrand" href="#">
+    <div class="nemblem"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3L14.5 9.5L21 9.5L15.8 13.5L17.9 20L12 16.3L6.1 20L8.2 13.5L3 9.5L9.5 9.5Z" stroke="#C4913A" stroke-width="1.2"/></svg></div>
+    <div><span class="nbrand-main">Siberian Wellness</span><span class="nbrand-sub">Владимир Федоренко · Тюмень</span></div>
+  </a>
+  <ul class="nlinks">
+    <li><a href="#about">Обо мне</a></li>
+    <li><a href="#products">Продукция</a></li>
+    <li><a href="#income">Возможности</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <button class="ncta" id="navCta">Связаться со мной</button>
+  <button class="burger" id="burger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobnav" id="mobnav">
+  <a href="#about" onclick="closeNav()">Обо мне</a>
+  <a href="#products" onclick="closeNav()">Продукция</a>
+  <a href="#income" onclick="closeNav()">Возможности</a>
+  <a href="#reviews" onclick="closeNav()">Отзывы</a>
+  <a href="#contact" onclick="closeNav()">Контакты</a>
+  <button class="mobnav-cta" onclick="closeNav();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),300)">Связаться со мной</button>
+</div>
+
+<!-- ══ 01 HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-photo">
+    <img id="heroImg" src="https://images.unsplash.com/photo-1743309411498-a0f4f4b96b65?w=2000&q=92&auto=format&fit=crop" alt="Горный рассвет, туман в долине">
+  </div>
+  <div class="hero-grade"></div>
+  <div class="hero-vleft"></div>
+  <div class="hero-fog"></div>
+  <div class="hero-fog2"></div>
+  <canvas id="heroGrain" aria-hidden="true"></canvas>
+  <div class="hero-body">
+    <div class="hero-left">
+      <div class="hero-eyebrow" id="hEyebrow">
+        <span class="hero-eline"></span>Сила Сибири
+      </div>
+      <h1 id="heroH1">
+        <span class="row"><span class="big">Природа, которая</span></span>
+        <span class="row"><span class="med">работает на</span></span>
+        <em id="heroEm">ваше здоровье</em>
+      </h1>
+      <p class="hero-sub" id="heroSub">Помогаю подобрать натуральную продукцию Siberian Wellness и сопровождаю людей, которые хотят укрепить здоровье или создать дополнительный источник дохода. Более 6 лет опыта и команда из 600+ партнёров.</p>
+      <div class="hero-btns" id="heroBtns">
+        <button class="hb-prim" id="heroBtn1">Начать путь</button>
+        <button class="hb-sec" id="heroBtn2">Подробнее о возможностях →</button>
+      </div>
+      <div class="hero-nums" id="heroNums">
+        <div><span class="hn-n" data-target="600">0</span><span class="hn-l">Партнёров<br>в команде</span></div>
+        <div><span class="hn-n" data-target="6">0</span><span class="hn-l">Лет<br>практического опыта</span></div>
+        <div><span class="hn-n" style="font-size:22px;line-height:1.2;letter-spacing:0">Личное<br>сопровождение</span><span class="hn-l">От первой консультации<br>до результата</span></div>
+      </div>
+    </div>
+    <div class="hero-right" id="heroRight">
+      <div class="hero-location">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Тюмень, Россия
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-ring"></div>
+        <div class="hero-badge-ring2"></div>
+        <svg class="hero-badge-svg" viewBox="0 0 144 144" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><path id="heroCp" d="M72,72 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+          <text font-size="9.2" fill="rgba(196,145,58,.72)" font-family="Inter,sans-serif" letter-spacing="3.2" font-weight="400">
+            <textPath href="#heroCp">СИБИРСКАЯ ПРИРОДА  •  ВАШЕ ЗДОРОВЬЕ  •  </textPath>
+          </text>
+        </svg>
+        <div class="hero-badge-center">
+          <div class="hero-badge-ico">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M12 3L14.5 9.5L21 9.5L15.8 13.5L17.9 20L12 16.3L6.1 20L8.2 13.5L3 9.5L9.5 9.5Z" stroke="#C4913A" stroke-width="1.3"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span class="hero-scroll-lbl">Прокрутите вниз</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 STATS ══ -->
+<div class="stats">
+  <div class="stats-photo">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=80&fm=jpg" alt="Сибирский лес">
+  </div>
+  <div class="stats-ov"></div>
+  <div class="stats-inner">
+    <div class="stat g-fade"><span class="stat-n" data-target="65">0</span><span class="stat-l">Стран мира<br>Siberian Wellness</span></div>
+    <div class="stat g-fade" style="transition-delay:.12s"><span class="stat-n" data-target="30">0</span><span class="stat-l">Лет исследований<br>в области здоровья</span></div>
+    <div class="stat g-fade" style="transition-delay:.24s"><span class="stat-n" data-target="1900">0</span><span class="stat-l">Партнёров компании<br>получили автобонус</span></div>
+  </div>
+</div>
+
+<!-- ══ 03 PATHS ══ -->
+<div class="paths">
+  <div class="pth">
+    <div class="pth-photo">
+      <img src="https://images.unsplash.com/photo-1696411394780-70fd433f398e?w=900&q=85&fm=jpg" alt="Кедровая ветвь с шишками">
+    </div>
+    <div class="pth-ov"></div>
+    <div class="pth-line"></div>
+    <div class="pth-body g-fade">
+      <span class="pth-chip chip-g">Для покупателей</span>
+      <h2>Хочу натуральную продукцию</h2>
+      <p class="pth-desc">Сибирское сырьё, научная база, 30 лет на рынке. Помогу подобрать под вашу цель: иммунитет, энергия, вес, красота.</p>
+      <ul class="pth-list">
+        <li><span class="ck-g">✓</span><span>Бесплатная консультация по подбору</span></li>
+        <li><span class="ck-g">✓</span><span>Покупка через официальный магазин</span></li>
+        <li><span class="ck-g">✓</span><span>Скидки для постоянных покупателей</span></li>
+        <li><span class="ck-g">✓</span><span>Сопровождение и поддержка на результат</span></li>
+      </ul>
+      <button class="pth-btn pbg" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Смотреть продукцию</button>
+    </div>
+  </div>
+  <div class="pth">
+    <div class="pth-photo">
+      <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=900&q=85&fm=jpg" alt="Горный поход, рассвет">
+    </div>
+    <div class="pth-ov"></div>
+    <div class="pth-line"></div>
+    <div class="pth-body g-fade" style="transition-delay:.1s">
+      <span class="pth-chip chip-a">Для партнёров</span>
+      <h2>Хочу строить бизнес</h2>
+      <p class="pth-desc">Возьму в свою команду лично. Дам систему, план и поддержку — не бросаю после регистрации.</p>
+      <ul class="pth-list">
+        <li><span class="ck-a">✓</span><span>Личный наставник с опытом 6+ лет</span></li>
+        <li><span class="ck-a">✓</span><span>Чёткий план действий с первого дня</span></li>
+        <li><span class="ck-a">✓</span><span>Командные встречи, обучение, рост</span></li>
+        <li><span class="ck-a">✓</span><span>Автобонус, путешествия, жильё от SW</span></li>
+      </ul>
+      <button class="pth-btn pba" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Хочу в команду</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 04 ABOUT ══ -->
+<section class="about" id="about">
+  <div class="about-photo g-left">
+    <img id="vladPhoto" src="" alt="Владимир Федоренко">
+    <div class="about-photo-ov"></div>
+    <div class="about-sig">В. Федоренко</div>
+    <div class="about-badge"><span class="about-badge-n">6+</span><span class="about-badge-l">лет<br>опыта</span></div>
+  </div>
+  <div class="about-text g-fade">
+    <div class="eyebrow">Обо мне</div>
+    <h2>Меня зовут<br><em>Владимир Федоренко</em></h2>
+    <div class="about-rule"></div>
+    <p>Шесть лет назад я познакомился с продукцией Siberian Wellness как обычный покупатель. Мне хотелось найти действительно качественные натуральные продукты для себя и своей семьи. Когда я увидел результат, понял, что хочу связать с этим свою дальнейшую деятельность.</p>
+    <p>Постепенно изучил продукцию, систему компании и начал помогать другим людям. Сначала — с выбором продуктов, позже — с построением собственного дела.</p>
+    <p>Сегодня моя команда насчитывает более 600 человек. Для каждого нового партнёра я стараюсь быть не просто наставником, а человеком, который помогает пройти путь спокойно, без лишних ошибок и с пониманием каждого шага.</p>
+    <p>Если вы хотите подобрать продукцию — помогу выбрать именно то, что подходит под ваши цели. Если вам интересно сотрудничество — поделюсь своим опытом, покажу систему работы и буду сопровождать на каждом этапе. Для меня важно не количество регистраций, а реальные результаты людей.</p>
+    <div class="metrics">
+      <div class="met"><div class="met-n">600+</div><div class="met-l">Партнёров в команде</div></div>
+      <div class="met"><div class="met-n">6 лет</div><div class="met-l">Практического опыта</div></div>
+      <div class="met"><div class="met-n" style="font-size:24px;line-height:1.2">Личное<br>сопровождение</div><div class="met-l">От первой консультации до результата</div></div>
+      <div class="met"><div class="met-n" style="font-size:24px;line-height:1.2">Индивидуальный<br>подход</div><div class="met-l">Подбираю решения под каждого человека</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 05 PRODUCTS ══ -->
+<section class="products" id="products">
+  <div class="prod-header g-fade">
+    <div>
+      <div class="eyebrow">Продукция</div>
+      <h2 style="margin-top:18px">Сила натуральных <em>ингредиентов</em><br>для вашей жизни</h2>
+    </div>
+    <div class="prod-header-r g-fade" style="transition-delay:.1s">Выберите направление — помогу подобрать конкретные продукты под вашу цель и образ жизни</div>
+  </div>
+  <div class="prod-grid">
+    <!-- Big card: left column, spans full height -->
+    <div class="pcard pcard-big g-fade">
+      <img class="pcard-photo" src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=800&q=85&fm=jpg" alt="Кедровые шишки Сибири" style="min-height:600px">
+      <div class="pcard-ov"></div>
+      <div class="pcard-body">
+        <span class="pcard-cat">Иммунитет</span>
+        <span class="pcard-name">Защита<br>организма</span>
+        <div class="pcard-desc">Витамины, адаптогены и омеги из сибирского сырья для ежедневной защиты и восстановления</div>
+        <div class="pcard-cta">Смотреть продукцию</div>
+      </div>
+    </div>
+    <!-- Right column: 3 small cards -->
+    <div class="prod-right-col g-fade" style="transition-delay:.12s">
+      <div class="pcard-sm-wrap">
+        <img class="pcard-photo" src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=700&q=85&fm=jpg" alt="Сибирские ягоды">
+        <div class="pcard-ov"></div>
+        <div class="pcard-body">
+          <span class="pcard-cat">Красота</span>
+          <span class="pcard-name">Натуральный уход</span>
+          <div class="pcard-desc">Забота о коже и волосах с силой сибирских трав</div>
+          <div class="pcard-cta">Смотреть продукцию</div>
+        </div>
+      </div>
+      <div class="pcard-sm-wrap">
+        <img class="pcard-photo" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&q=85&fm=jpg" alt="Горное озеро Алтай">
+        <div class="pcard-ov"></div>
+        <div class="pcard-body">
+          <span class="pcard-cat">Энергия</span>
+          <span class="pcard-name">Активная жизнь</span>
+          <div class="pcard-desc">Источник энергии для спорта и активного дня</div>
+          <div class="pcard-cta">Смотреть продукцию</div>
+        </div>
+      </div>
+      <div class="pcard-sm-wrap">
+        <img class="pcard-photo" src="https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=700&q=85&fm=jpg" alt="Хвойные ветки с шишками">
+        <div class="pcard-ov"></div>
+        <div class="pcard-body">
+          <span class="pcard-cat">Долголетие</span>
+          <span class="pcard-name">Здоровье на годы</span>
+          <div class="pcard-desc">Программы долголетия для всей семьи</div>
+          <div class="pcard-cta">Смотреть продукцию</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="prod-cta g-fade" style="transition-delay:.2s">
+    <button class="btn-outline"><span>Перейти в официальный магазин</span></button>
+  </div>
+</section>
+
+<!-- ══ 06 CALC ══ -->
+<section class="calc" id="income">
+  <div class="calc-photo">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=80&fm=jpg" alt="Сибирский лес">
+  </div>
+  <div class="calc-ov"></div>
+  <div class="calc-inner">
+    <div class="g-fade">
+      <div class="eyebrow calc-eyebrow">Возможности</div>
+      <h2 style="margin-top:18px">Рассчитайте <em>ваш доход</em></h2>
+      <p class="calc-sub">Ответьте на два вопроса — покажу реалистичную картину для вашего старта</p>
+    </div>
+    <div class="calc-layout">
+      <div class="g-fade" style="transition-delay:.1s">
+        <div class="calc-grp">
+          <div class="calc-lbl">Сколько времени готовы уделять</div>
+          <div class="calc-opts">
+            <div class="copt on" onclick="setT(this,1)"><span class="copt-ico">🌱</span><span class="copt-txt">1–2 часа в день</span></div>
+            <div class="copt" onclick="setT(this,2)"><span class="copt-ico">🌿</span><span class="copt-txt">3–4 часа в день</span></div>
+            <div class="copt" onclick="setT(this,3)"><span class="copt-ico">🌳</span><span class="copt-txt">Полный день</span></div>
+          </div>
+        </div>
+        <div class="calc-grp">
+          <div class="calc-lbl">Ваша цель через 6 месяцев</div>
+          <div class="slider-marks"><span>20 000 ₽</span><span>50 000 ₽</span><span>100 000 ₽</span><span>200 000+ ₽</span></div>
+          <input type="range" class="csl" min="1" max="4" step="1" value="2" id="gR" oninput="upC()">
+        </div>
+      </div>
+      <div class="calc-res g-fade" style="transition-delay:.15s">
+        <div class="res-lbl">Потенциальный доход в месяц</div>
+        <div class="res-amt" id="rA">45 000 ₽</div>
+        <div class="res-per" id="rP">через 3–4 месяца при 1–2 часах в день</div>
+        <div class="res-rows">
+          <div class="res-row"><span class="res-rl">Личные продажи</span><span class="res-rv" id="rS">15 000 ₽</span></div>
+          <div class="res-row"><span class="res-rl">Доход с команды</span><span class="res-rv" id="rT">25 000 ₽</span></div>
+          <div class="res-row"><span class="res-rl">Бонусы компании</span><span class="res-rv" id="rB">5 000 ₽</span></div>
+        </div>
+        <button class="btn-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Получить личный план старта →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 07 REVIEWS ══ -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="g-fade">
+      <div class="eyebrow">Отзывы</div>
+      <h2>Истории людей <em>из команды</em></h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev"><div class="rev-q">"</div><p class="rev-text">Пришла просто за добавками для иммунитета. Владимир ненавязчиво объяснил, как работает бизнес. Через два месяца вышла на 28 000 рублей — и это буквально в свободное время между работой и детьми.</p><div class="rev-badge">↑ Первый доход за 2 месяца</div><div class="rev-author"><div class="rev-av av1">АС</div><div><div class="rev-name">Анна Семёнова</div><div class="rev-city">Тюмень · 1,5 года в команде</div></div></div></div>
+      <div class="rev"><div class="rev-q">"</div><p class="rev-text">Вообще не верил в сетевой маркетинг. Но Владимир показал цифры своей структуры — живые, не нарисованные. Теперь у меня своя команда в Тюмени и Екатеринбурге.</p><div class="rev-badge">↑ 18 человек в личной команде</div><div class="rev-author"><div class="rev-av av2">ДМ</div><div><div class="rev-name">Дмитрий Малков</div><div class="rev-city">Тюмень · 2 года в команде</div></div></div></div>
+      <div class="rev"><div class="rev-q">"</div><p class="rev-text">Начала ради здоровья семьи, осталась ради дохода. Самое важное — Владимир не исчезает после регистрации. Он реально помогает разобраться в системе с нуля.</p><div class="rev-badge">↑ 52 000 ₽/мес на 7-й месяц</div><div class="rev-author"><div class="rev-av av3">ОП</div><div><div class="rev-name">Ольга Павлова</div><div class="rev-city">Тобольск · 3 года в команде</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 08 BONUSES ══ -->
+<section class="bonuses">
+  <div class="bonuses-inner">
+    <div class="bonuses-hdr g-fade">
+      <div>
+        <div class="eyebrow" style="color:var(--gold3)"><span style="background:var(--gold3);width:28px;height:1px;display:inline-block;flex-shrink:0"></span>Возможности партнёра</div>
+        <h2 style="margin-top:18px">Что даёт <em>Siberian Wellness</em></h2>
+      </div>
+      <p>Компания вкладывается в своих партнёров не только деньгами — автомобили, путешествия и собственное жильё для лучших.</p>
+    </div>
+    <div class="bon-grid">
+      <div class="bon g-fade"><div class="bon-ico"><svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3m-1 9H9a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v5"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div><h3>Автобонус</h3><p>Компания компенсирует стоимость автомобиля или выплачивает ежемесячную надбавку. Более 1900 партнёров уже получили свои машины.</p><span class="bon-tag">Авто</span></div>
+      <div class="bon g-fade" style="transition-delay:.12s"><div class="bon-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.57a16 16 0 0 0 6 6l.77-.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.31 16"/></svg></div><h3>Оплачиваемые путешествия</h3><p>Корпоративные поездки за счёт компании — Баку, Эмираты, Португалия, Мексика и десятки других направлений каждый год.</p><span class="bon-tag">Трэвел</span></div>
+      <div class="bon g-fade" style="transition-delay:.24s"><div class="bon-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Жилищная программа</h3><p>Siberian Wellness помогает партнёрам с покупкой квартиры при достижении определённых показателей командного товарооборота.</p><span class="bon-tag">Жильё</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 09 CTA — split screen ══ -->
+<section class="cta" id="contact">
+  <div class="cta-photo">
+    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=90&fm=jpg" alt="Северное сияние над тайгой">
+    <div class="cta-photo-ov"></div>
+    <div class="cta-quote">
+      <div class="cta-quote-text">«Природа Сибири даёт силу — мы помогаем донести её до каждого»</div>
+      <div class="cta-quote-src">Владимир Федоренко</div>
+    </div>
+  </div>
+  <div class="cta-form-wrap">
+    <div class="eyebrow cta-eyebrow">Напишите Владимиру</div>
+    <h2>Сделайте шаг к <em>лучшей версии</em> себя</h2>
+    <p>Расскажите, что вас интересует: продукция или возможность зарабатывать. Отвечаю лично в день обращения.</p>
+    <div class="fg"><div class="fg-o on" onclick="selG(this)">Хочу продукцию</div><div class="fg-o" onclick="selG(this)">Хочу в бизнес</div></div>
+    <div class="fr2"><input class="fi" type="text" placeholder="Ваше имя"><input class="fi" type="tel" placeholder="Телефон или Telegram"></div>
+    <textarea class="fta" placeholder="Ваш вопрос (необязательно)"></textarea>
+    <button class="fsub">Отправить заявку</button>
+    <div class="fmess"><a class="fma" href="#">✈ Telegram</a><a class="fma" href="#">В ВКонтакте</a><a class="fma" href="#">☎ Позвонить</a></div>
+    <p class="fpriv">Данные не передаются третьим лицам</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="footer-row">
+      <div class="fbrand">
+        <div class="femb"><svg viewBox="0 0 24 24" fill="none" style="width:13px;height:13px"><path d="M12 3L14.5 9.5L21 9.5L15.8 13.5L17.9 20L12 16.3L6.1 20L8.2 13.5L3 9.5L9.5 9.5Z" stroke="#C4913A" stroke-width="1.3"/></svg></div>
+        <span class="fname">Владимир Федоренко · Siberian Wellness</span>
+      </div>
+      <div class="fcontact">Тюмень · <a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a></div>
+    </div>
+    <div class="footer-bot">
+      <span class="fcopy">© 2025 Владимир Федоренко · Официальный партнёр Siberian Wellness · Тюмень</span>
+      <span class="fdisc">Не является публичной офертой</span>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
